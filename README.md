@@ -4,17 +4,14 @@
 当前模型的 **credit 消耗**、**上下文窗口占用率**、**每轮耗时**。数据全部来自本机
 Qoder 会话日志，**不联网、不上传任何东西**。
 
-灵感来自 [zcode-token-usage-statusbar](https://github.com/Clannadad/zcode-token-usage-statusbar)，
-但针对 Qoder 的数据现状做了取舍（见下）。
-
 简体中文 · [English](README.en.md) · Windows / macOS / Linux · Python 3.8+ · [MIT](LICENSE)
 
-## 为什么和 zcode 版不一样
+## 为什么没有 token 数和余额
 
-zcode 版能显示 token 用量、tok/s、以及 MiniMax/Kimi 等供应商的**剩余额度 + 重置倒计时**，
-靠的是「本地 SQLite 存真实 token」+「联网查供应商额度 API」两条腿。
+有些额度工具会显示真实 token 用量、tok/s，以及各家模型的**剩余额度 + 重置倒计时**，
+靠的是「本地存真实 token」+「联网查供应商额度 API」。
 
-**这两个前提在 Qoder 上都不成立**：
+**这两条在 Qoder 上都不成立**：
 
 - Qoder 落盘会话日志时，把 `input_tokens / output_tokens / cache_*` **一律置零**。
   本机 1900+ 条记录里没有一条非零 —— 所以真实 token 数和 tok/s **算不出来**。

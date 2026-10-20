@@ -5,13 +5,10 @@ It shows the current model's **credit consumption**, **context-window occupancy*
 **per-turn duration** — all parsed from your machine's Qoder session logs. No network,
 nothing uploaded.
 
-Inspired by [zcode-token-usage-statusbar](https://github.com/Clannadad/zcode-token-usage-statusbar),
-but scoped to what Qoder actually exposes locally.
+## Why no token counts or balance
 
-## Why it differs from the zcode version
-
-The zcode tool shows real token counts, tok/s, and vendor **remaining quota + reset
-countdown** by reading a local SQLite (real tokens) plus calling vendor quota APIs.
+Some quota tools show real token counts, tok/s, and per-vendor **remaining quota + reset
+countdown**, relying on local storage of real tokens plus calling vendor quota APIs.
 
 Neither premise holds for Qoder:
 
