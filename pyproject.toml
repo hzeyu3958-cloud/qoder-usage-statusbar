@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qoder-usage-statusbar"
+version = "0.1.0"
+description = "Local credit/context status bar for Qoder (offline, reads session logs)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "hzeyu3958-cloud" }]
+keywords = ["qoder", "usage", "credits", "statusbar", "tray"]
+dependencies = []
+
+[project.optional-dependencies]
+tray = ["pystray>=0.19", "Pillow>=9.0"]
+
+[project.scripts]
+qoder-usage = "qoder_usage_statusbar.__main__:main"
+
+[tool.setuptools]
+packages = ["qoder_usage_statusbar"]
